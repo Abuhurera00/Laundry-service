@@ -26,6 +26,10 @@ import logo from "../assets/images/logo.png";
 import logoSmall from "../assets/images/logo-small.png";
 import empty from "../assets/images/empty.png";
 import profilesect from "../assets/images/profilesect.jpg";
+import laundry_1 from "../assets/images/laundry_1.avif"
+import laundry_2 from "../assets/images/Laundry_2.jpg"
+import laundry_3 from "../assets/images/Laundry_3.avif"
+import laundry_4 from "../assets/images/Laundry_4.avif"
 
 const images = {
   profile,
@@ -35,7 +39,11 @@ const images = {
   logo,
   logoSmall,
   empty,
-  profilesect
+  profilesect,
+  laundry_1,
+  laundry_2,
+  laundry_3,
+  laundry_4
 };
 
 export default images; // Exporting the images object as default
