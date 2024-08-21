@@ -697,7 +697,7 @@ const CartScreen = () => {
                                     </Pressable>
 
                                     {/* - + button */}
-                                    <Text className="text-[16px] font-[500]">${item.price * item.quantity}</Text>
+                                    <Text className="text-[16px] font-[500]">AED {item.price * item.quantity}</Text>
                                 </View>
                             ))}
                         </Pressable>
@@ -727,7 +727,7 @@ const CartScreen = () => {
                                         Item Total
                                     </Text>
                                     <Text style={{ fontSize: 18, fontWeight: "400" }}>
-                                        ₹{total}
+                                        AED {total}
                                     </Text>
                                 </View>
 
@@ -954,7 +954,7 @@ const CartScreen = () => {
                                         To Pay
                                     </Text>
                                     <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                                        {total + 95}
+                                       AED {total}
                                     </Text>
                                 </View>
                             </View>
@@ -968,7 +968,7 @@ const CartScreen = () => {
             ) : (
                 <Pressable className="bg-[#088F8F] p-[10px] mb-[40px] m-[15px] rounded-xl flex-row items-center justify-between mt-auto">
                     <View>
-                        <Text className="text-base font-psemibold text-white">{cart.length} items | ${total}</Text>
+                        <Text className="text-base font-psemibold text-white">{cart.length} items | AED {total}</Text>
                         <Text className="text-[11px] font-psemibold text-white my-[6px]">Extra charges might apply</Text>
                     </View>
 

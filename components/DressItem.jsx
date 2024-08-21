@@ -20,7 +20,7 @@ const DressItem = ({ item }) => {
 
                 <View>
                     <Text className="w-[83px] font-psemibold mb-0.5">{item.name}</Text>
-                    <Text className="w-[60px] font-pmedium text-gray-600">${item.price}</Text>
+                    <Text className="w-[60px] font-pmedium text-gray-600">AED {item.price}</Text>
                 </View>
 
                 {cart.some((c) => c.id === item.id) ? (

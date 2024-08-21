@@ -692,7 +692,7 @@ const HomeScreen = () => {
         ) : (
           <Pressable className="bg-[#088F8F] p-[10px] mb-[40px] m-[15px] rounded-xl flex-row items-center justify-between">
             <View>
-              <Text className="text-base font-psemibold text-white">{cart.length} items | ${total}</Text>
+              <Text className="text-base font-psemibold text-white">{cart.length} items | AED {total}</Text>
               <Text className="text-[11px] font-psemibold text-white my-[6px]">Extra charges might apply</Text>
             </View>
 
