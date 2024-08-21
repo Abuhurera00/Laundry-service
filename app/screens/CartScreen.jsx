@@ -877,7 +877,7 @@ const CartScreen = () => {
 
 
                                 {/*  */}
-                                <View
+                                {/* <View
                                     style={{
                                         flexDirection: "row",
                                         // alignItems: "center",
@@ -901,11 +901,11 @@ const CartScreen = () => {
                                     >
                                         {route.params.latitude}
                                     </Text>
-                                </View>
+                                </View> */}
                                 {/*  */}
 
                                 {/*  */}
-                                <View
+                                {/* <View
                                     style={{
                                         flexDirection: "row",
                                         // alignItems: "center",
@@ -929,7 +929,7 @@ const CartScreen = () => {
                                     >
                                         {route.params.longitude}
                                     </Text>
-                                </View>
+                                </View> */}
                                 {/*  */}
 
 
