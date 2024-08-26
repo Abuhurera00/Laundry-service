@@ -1032,17 +1032,35 @@ const HomeScreen = () => {
   // =///=/=/=/==/==/=/==/===//=//======//==/=//==/==/=/
   const [profileImageUrl, setProfileImageUrl] = useState(null);
 
+  // useEffect(() => {
+  //   const auth = getAuth();
+  //   const user = auth.currentUser;
+
+  //   if (user) {
+  //     // Use ui-avatars.com to generate a profile image based on the user's email
+  //     const initials = user.email.charAt(0).toUpperCase();
+  //     const avatarUrl = `https://ui-avatars.com/api/?name=${initials}&background=random&format=png`;
+  //     console.log(avatarUrl);
+  //     setProfileImageUrl(avatarUrl);
+  //   }
+  // }, []);
+
+
+
   useEffect(() => {
     const auth = getAuth();
-    const user = auth.currentUser;
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        // Use ui-avatars.com to generate a profile image based on the user's email
+        const initials = user.email.charAt(0).toUpperCase();
+        const avatarUrl = `https://ui-avatars.com/api/?name=${initials}&background=random&format=png`;
+        console.log(avatarUrl);
+        setProfileImageUrl(avatarUrl);
+      }
+    });
 
-    if (user) {
-      // Use ui-avatars.com to generate a profile image based on the user's email
-      const initials = user.email.charAt(0).toUpperCase();
-      const avatarUrl = `https://ui-avatars.com/api/?name=${initials}&background=random&format=png`;
-      console.log(avatarUrl);
-      setProfileImageUrl(avatarUrl);
-    }
+    // Clean up the subscription
+    return () => unsubscribe();
   }, []);
 
 
@@ -1062,11 +1080,8 @@ const HomeScreen = () => {
 
             <Pressable onPress={() => navigation.navigate("screens/ProfileScreen")} className="ml-auto mr-[7]">
               <Image
-                className="w-[35] h-[35] rounded-full"
-                // source={{ uri: "https://lh3.google.com/u/0/ogw/AF2bZygK3usWmKjF5FL4t5pA7iT5PuY8q6QnfRFmgSU3qUjgzA=s64-c-mo" }} 
+                className="w-[35] h-[35] rounded-full" 
                 source={{ uri: profileImageUrl }}
-                // defaultSource={{ uri: 'https://lh3.google.com/u/0/ogw/AF2bZygK3usWmKjF5FL4t5pA7iT5PuY8q6QnfRFmgSU3qUjgzA=s64-c-mo' }}
-                // style={{ width: 100, height: 100 }}
                 onError={(error) => console.log('Image loading error:', error)}
               />
             </Pressable>

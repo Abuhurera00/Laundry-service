@@ -14,12 +14,26 @@ const ProfileScreen = () => {
   const navigation = useNavigation();
   const [orders, setOrders] = useState([]);
 
-  const signOutUser = () => {
-    signOut(auth).then(() => {
-      navigation.replace("screens/LoginScreen");
-    }).catch(err => {
-      console.log(err);
-    });
+  // const signOutUser = () => {
+  //   signOut(auth).then(() => {
+  //     navigation.replace("screens/LoginScreen");
+  //   }).catch(err => {
+  //     console.log(err);
+  //   });
+  // };
+
+
+
+  const signOutUser = async () => {
+    try {
+      await signOut(auth);
+      // setOrders([]);  // Clear any user-specific state
+      setTimeout(() => {
+        navigation.replace("screens/LoginScreen");
+      }, 500);  // Small delay to ensure sign-out completes
+    } catch (err) {
+      console.log("Sign-out error:", err);
+    }
   };
 
 

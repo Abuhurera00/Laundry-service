@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, KeyboardAvoidingView, TextInput, Pressable, ActivityIndicator } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, KeyboardAvoidingView, TextInput, Pressable, ActivityIndicator, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -26,14 +26,30 @@ const LoginScreen = () => {
         return unsubscribe;
     }, [])
 
-    const login = () => {
-        signInWithEmailAndPassword(auth, email, password).then((userCrediential) => {
-            console.log("user Credientials", userCrediential);
-            const user = userCrediential.user;
-            console.log("user credientials", user);
+    // const login = () => {
+    //     signInWithEmailAndPassword(auth, email, password).then((userCrediential) => {
+    //         console.log("user Credientials", userCrediential);
+    //         const user = userCrediential.user;
+    //         console.log("user credientials", user);
 
-        })
-    }
+    //     })
+    // }
+
+
+
+    const login = async () => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            // console.log("User Credentials", userCredential);
+            const user = userCredential.user;
+            // console.log("User Credentials", user);
+        } catch (error) {
+            // console.error("Error during sign-in:", error);
+            Alert.alert('Error while logging in', 'Please check the email or password');
+        }
+    };
+
+
     return (
         <SafeAreaView className="flex-1 bg-white items-center mt-6 p-[10]">
             {loading ? (
