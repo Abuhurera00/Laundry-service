@@ -1,13 +1,12 @@
 import { SplashScreen, Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
-import { useEffect } from 'react';
-// import HomeScreen from './screens/homescreen';
-// import { View } from 'react-native';
+// import { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Provider } from 'react-redux';
 import store from '../store';
 import StackNavigator from '../StackNavigator';
 import HomeScreen from './screens/homescreen';
+import React, { useEffect } from 'react';
 
 const _layout = () => {
   const [fontsLoaded, error] = useFonts({
@@ -33,15 +32,8 @@ const _layout = () => {
 
 
   return (
-    // <Stack>
-    //   <Stack.Screen name='index' options={{ headerShown : false }} />
-    //   <Stack.Screen name='homescreen' options={{ headerShown : false }} />
-    //   <HomeScreen />
-    //   <StatusBar style='auto' />
-    // </Stack>
     <Provider store={store}>
       <StackNavigator />
-      {/* <HomeScreen /> */}
       <StatusBar style='auto' />
     </Provider>
   )
