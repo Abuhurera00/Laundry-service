@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, Pressable, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -55,8 +55,9 @@ const CartScreen = () => {
             await updateDoc(userDocRef, {
                 orders: arrayUnion(newOrder),
             });
-            console.log('Order placed successfully!');
+            // console.log('Order placed successfully!');
         } catch (error) {
+            Alert.alert('There was an error in submitting', 'Please try again later');
             console.error('Error placing order:', error);
         }
     };
@@ -66,12 +67,12 @@ const CartScreen = () => {
 
     useEffect(() => {
         if (route.params.pickUpDate) {
-            console.log("Received pickUpDate:", route.params.pickUpDate); // Debug log
+            // console.log("Received pickUpDate:", route.params.pickUpDate); // Debug log
 
             // Directly use the ISO string to create a Date object
             const date = new Date(route.params.pickUpDate);
 
-            console.log("Parsed Date:", date); // Log the parsed Date object
+            // console.log("Parsed Date:", date); // Log the parsed Date object
 
             if (!isNaN(date.getTime())) {
                 setFormattedDate(date.toLocaleDateString('en-US', {

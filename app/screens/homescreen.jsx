@@ -1054,7 +1054,7 @@ const HomeScreen = () => {
         // Use ui-avatars.com to generate a profile image based on the user's email
         const initials = user.email.charAt(0).toUpperCase();
         const avatarUrl = `https://ui-avatars.com/api/?name=${initials}&background=random&format=png`;
-        console.log(avatarUrl);
+        // console.log(avatarUrl);
         setProfileImageUrl(avatarUrl);
       }
     });

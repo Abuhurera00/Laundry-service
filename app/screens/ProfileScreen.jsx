@@ -48,7 +48,7 @@ const ProfileScreen = () => {
         if (userData.orders) {
           const allOrders = userData.orders.map(order => order.orderDetails);
           setOrders(allOrders);
-          console.log('Orders:', allOrders);
+          // console.log('Orders:', allOrders);
         }
       } else {
         console.log("No such document!");
