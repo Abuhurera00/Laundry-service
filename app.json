@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "laundry-service",
+    "name": "Laundry Service",
     "slug": "laundry-service",
     "scheme": "laundry-service",
     "version": "1.0.0",
@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.abuhurera123.laundryservice"
+      "bundleIdentifier": "com.laundry.service"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.abuhurera_123.laundryservice"
+      "package": "com.laundry.service"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -34,8 +34,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "18e2bf11-8fe2-4a6c-ad3b-d02bcd694cc8"
+        "projectId": "17e66e0f-900a-48d6-b773-156d548879c7"
       }
-    }
+    },
+    "owner": "abuhurera_123"
   }
 }
